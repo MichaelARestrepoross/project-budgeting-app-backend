@@ -1,11 +1,12 @@
 module.exports = [ 
-  {
+{
     id: 1,
     item_name: "Salary",
     amount: 5000,
     date: "2024-02-19",
     from: "Employer",
-    category: "Income"
+    category: "Income",
+    transactionType: "Addition"
   },
   {
     id: 2,
@@ -13,7 +14,8 @@ module.exports = [
     amount: -50,
     date: "2024-02-18",
     from: "Grocery Store",
-    category: "Food"
+    category: "Food",
+    transactionType: "Deduction"
   },
   {
     id: 3,
@@ -21,7 +23,8 @@ module.exports = [
     amount: 1000,
     date: "2024-02-17",
     from: "Bank",
-    category: "Savings"
+    category: "Savings",
+    transactionType: "Addition"
   },
   {
     id: 4,
@@ -29,7 +32,8 @@ module.exports = [
     amount: -30,
     date: "2024-02-16",
     from: "Pet Store",
-    category: "Pets"
+    category: "Pets",
+    transactionType: "Deduction"
   },
   {
     id: 5,
@@ -37,7 +41,8 @@ module.exports = [
     amount: -80,
     date: "2024-02-15",
     from: "Utility Company",
-    category: "Bills"
+    category: "Bills",
+    transactionType: "Deduction"
   },
   {
     id: 6,
@@ -45,6 +50,7 @@ module.exports = [
     amount: 200,
     date: "2024-02-14",
     from: "Employer",
-    category: "Income"
+    category: "Income",
+    transactionType: "Addition"
   }
 ];
