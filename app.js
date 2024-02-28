@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
 
 // 404 PAGE
 app.get('*', (req, res) => {
-  res.status(404).json({ error: 'Log not found' });
+  res.status(404).json({ error: 'transaction not found' });
 });
 
 // EXPORT
