@@ -11,4 +11,6 @@ let transactionsArray = require('../models/transactions.model')
 transactions.get('/', (req, res) => {
     res.json({ transactions : transactionsArray })
 })
-  
+
+
+module.exports = transactions
