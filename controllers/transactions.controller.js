@@ -30,8 +30,7 @@ transactions.get('/:id', (req, res) => {
 
 // Add / post a new transaction 
 transactions.post("/", (req, res) => {
-
-  // Create a new id. last id number in the logs array + 1
+  // Create a new id. last id number in the tranasction array + 1
   const newId = transactionsArray[transactionsArray.length - 1].id + 1;
 
   // req.body is an object. Add an id to the object
@@ -41,8 +40,21 @@ transactions.post("/", (req, res) => {
   //add data to the end of the array
   transactionsArray.push(req.body);
 
-  //return ransactions with new object
+  //return transactions with new object
   res.json({ transactions: transactionsArray });
+});
+
+//Updates a transaction with id
+transactions.put("/:id", (req, res) => {
+  const { id } = req.params;
+  const transactionsIndex = transactionsArray.findIndex((t) => t.id === +id);
+  if (transactionsIndex > -1) transactionsArray[transactionsIndex] = req.body;
+  if(transactionsIndex === -1){
+      res.status(404).json({ status:404 , error: `Transaction with the ID ${id} not found` })
+    }else{
+    // send back all the transactions because I plan to reset the  state
+    res.json({ transactions: transactionsArray });
+  }
 });
 
 module.exports = transactions
