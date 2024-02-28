@@ -28,5 +28,21 @@ transactions.get('/:id', (req, res) => {
   }
 });
 
+// Add / post a new transaction 
+transactions.post("/", (req, res) => {
+
+  // Create a new id. last id number in the logs array + 1
+  const newId = transactionsArray[transactionsArray.length - 1].id + 1;
+
+  // req.body is an object. Add an id to the object
+  req.body.id = newId;
+  console.log(req.body);
+
+  //add data to the end of the array
+  transactionsArray.push(req.body);
+
+  //return ransactions with new object
+  res.json({ transactions: transactionsArray });
+});
 
 module.exports = transactions
