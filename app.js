@@ -1,12 +1,12 @@
 // DEPENDENCIES
 const express = require('express')
 const cors = require("cors")
-//import the controller in order to the tell the application to use the specific resource's controller
-const transactionsController = require('./controllers/transactions.controller')
 
 // CONFIGURATION
 const app = express();
 
+//import the controller in order to the tell the application to use the specific resource's controller
+const transactionsController = require('./controllers/transactions.controller')
 
 //MIDDLEWARE PACKAGES
 app.use(cors());
