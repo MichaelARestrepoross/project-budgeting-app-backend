@@ -57,4 +57,17 @@ transactions.put("/:id", (req, res) => {
   }
 });
 
+// to delete a single Log
+transactions.delete("/:id", (req, res) => {
+  const { id } = req.params;
+  isId = transactionsArray.find((t) => t.id === +id)
+
+  if(isId){
+    transactionsArray = transactionsArray.filter((t) => t.id !== +id);
+    res.json({ transactions: transactionsArray });
+  }else{
+    res.status(404).json({ status:404 , error: `Transaction with the ID ${id} to delete not found` });
+  }
+});
+
 module.exports = transactions
